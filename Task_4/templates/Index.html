@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeAlpha AI Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>AI Object Tracking System</h1>
+        
+        <div id="video-wrapper" class="video-container" style="display: none;">
+            <img src="" id="ai-feed">
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn primary">Start Webcam</button>
+            <input type="file" id="video-input" accept="video/*" style="display:none;" onchange="uploadVideo(this)">
+            <button class="btn secondary" onclick="document.getElementById('video-input').click()">Upload Video</button>
+            <button id="stop-btn" class="btn danger">Stop Feed</button>
+        </div>
+        
+        <p id="status" class="status-ready">System Ready: Select Source</p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
